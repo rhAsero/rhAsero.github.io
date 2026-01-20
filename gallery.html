@@ -2,45 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <title>Gallery</title>
+    <title>Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/image.ico">
+    <style>
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        .gallery-row {
+            display: flex;   
+            flex-wrap: wrap;   
+            justify-content: center;
+            gap: 15px;         
+            margin-bottom: 20px;
+        }
 
+        h1, hr, h2, .item-container {
+            opacity: 0;
+            animation: reveal 0.8s ease-out forwards;
+        }
 
+        .item-container {
+            display: block;
+        }
+
+        h1 { animation-delay: 0.1s; }
+        .link-home { animation-delay: 0.3s; }
+        h2 { animation-delay: 0.5s; }
+        .link-1 { animation-delay: 0.7s; }
+        .link-2 { animation-delay: 0.9s; }
+        .link-3 { animation-delay: 1.1s; }
+        .link-4 { animation-delay: 1.3s; }
+        .link-5 { animation-delay: 1.5s; }
+        .link-6 { animation-delay: 1.5s; }
+        .link-7 { animation-delay: 1.3s; }
+        .link-8 { animation-delay: 1.1s; }
+        .link-9 { animation-delay: 0.9s; }
+        .link-10 { animation-delay: 0.7s; }
+
+        img {
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        a { text-decoration: none; color: #333; font-family: sans-serif; }
+    </style>
 </head>
 <body bgcolor="lightyellow">
 <center>
     <hr>
-        
-        <h1>GALLERY</h1>
-      <a href="index.html"> Home</a>
-        
+    <h1>GALLERY</h1>
+    <div class="item-container link-home"><a href="index.html"><strong>[ Back to Home ]</strong></a></div>
     <hr>
     
-        <h2>MY PICTURES</h2>
+    <h2>MY PICTURES</h2>
     <hr>
-        <img src="img/IMG_20251007_101813_152.jpg" width="*" height="260">
-        <img src="img/IMG_20251107_100746_814.jpg" width="*" height="260">
-        <img src="img/IMG_20251114_100234_465.jpg" width="*" height="260">
-        <img src="img/IMG_20251210_212030_482.jpg" width="*" height="260">
-        <img src="img/IMG_20251228_055922_672.jpg" width="*" height="260"><br>
-        <img src="img/IMG_20260113_101843_466.jpg" width="*" height="260">
-        <img src="img/IMG_20260114_000635_370.jpg" width="*" height="260">
-        <img src="img/Messenger_creation_7EBC34E5-0BB4-469F-88E5-428E383797EE.jpeg" width="*" height="260">
-        <img src="img/Messenger_creation_88CEBDE3-601B-4C33-A7C4-73A7CAE19057.png" width="*" height="260">
-        <img src="img/SING0167.JPG" width="*" height="260">
+    
+    <div class="gallery-row">
+        <div class="item-container link-1"><img src="img/IMG_20251007_101813_152.jpg" height="200"></div>
+        <div class="item-container link-2"><img src="img/IMG_20251107_100746_814.jpg" height="200"></div>
+        <div class="item-container link-3"><img src="img/IMG_20251114_100234_465.jpg" height="200"></div>
+        <div class="item-container link-4"><img src="img/IMG_20251210_212030_482.jpg" height="200"></div>
+        <div class="item-container link-5"><img src="img/IMG_20251228_055922_672.jpg" height="200"></div>
+        <div class="item-container link-6"><img src="img/IMG_20260113_101843_466.jpg" height="200"></div>
+        <div class="item-container link-7"><img src="img/IMG_20260114_000635_370.jpg" height="200"></div>
+        <div class="item-container link-8"><img src="img/Messenger_creation_7EBC34E5-0BB4-469F-88E5-428E383797EE.jpeg" height="200"></div>
+        <div class="item-container link-9"><img src="img/Messenger_creation_88CEBDE3-601B-4C33-A7C4-73A7CAE19057.png" height="200"></div>
+        <div class="item-container link-10"><img src="img/SING0167.JPG" height="200"></div>
+    </div>
 
-        <h2>MY AUDIO</h2>
+    <h2>MY AUDIO & VIDEO</h2>
     <hr>
-        <audio width="800" height="800" controls>
-	        <source src="audio/Sana Maulit Muli - Michael Pangilinan.mp3" type="audio/mp3">
-        </audio>
-    <hr>
-        <h2>MY VIDEOS</h2>
-    <hr>
-        <video width="1280" height="768" controls>
-	        <source src="vid/One Sweet Day - Cover by Khel, Bugoy, and Daryl Ong feat. Katrina Velarde.mp4" type="video/mp4">
-        </video>
+    <div class="item-container" style="animation-delay: 1.6s;">
+        <audio controls><source src="audio/Sana Maulit Muli - Michael Pangilinan.mp3"></audio>
+    </div>
+    <br>
+    <div class="item-container" style="animation-delay: 1.8s;">
+        <video width="600" controls><source src="vid/One Sweet Day - Cover by Khel, Bugoy, and Daryl Ong feat. Katrina Velarde.mp4"></video>
+    </div>
     <hr>
 </center>
 </body>
